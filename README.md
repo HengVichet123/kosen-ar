@@ -4,18 +4,19 @@ AR projects built for kosen (高専) graduation research using **ARToolKit 2.72*
 
 ---
 
-## EarthDefender
+## EnvDesigner
 
-An AR space shooter. 3D enemies spawn from portals on the AR board and move toward Earth. Shoot them down before they reach it.
+A 3D scene layout tool for designing the room environments used by RoomNavigator. Spawn models from a library of 92 `.mqo` files, assign types (door, furniture, init position), tune collision cylinders, and save in RoomNavigator-compatible format.
 
-**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq (.mqo models)
+**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq
 
 **Features**
-- 5 enemy types with different speeds, health, and behaviors (teleporter, swarmer queen, etc.)
-- 3 weapons: bullets, laser beam, area bomb
-- Animated explosions, health bars, kill counter, HUD
+- 92 spawnable models (type name with in-app text input or browse with picker)
+- Per-model collision cylinder editor with live display
+- Save / load layouts (appends on load, auto-fixes old path formats)
+- Model type assignment for RoomNavigator integration
 
-![EarthDefender demo](EarthDefender/demo_preview.gif)
+![EnvDesigner demo](EnvDesigner/demo_preview.gif)
 
 ---
 
@@ -35,19 +36,18 @@ A multi-room AR walker. Move a character through a parking lot → lobby → roo
 
 ---
 
-## EnvDesigner
+## EarthDefender
 
-A 3D scene layout tool for designing the room environments used by RoomNavigator. Spawn models from a library of 92 `.mqo` files, assign types (door, furniture, init position), tune collision cylinders, and save in RoomNavigator-compatible format.
+An AR space shooter. 3D enemies spawn from portals on the AR board and move toward Earth. Shoot them down before they reach it.
 
-**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq
+**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq (.mqo models)
 
 **Features**
-- 92 spawnable models (type name with in-app text input or browse with picker)
-- Per-model collision cylinder editor with live display
-- Save / load layouts (appends on load, auto-fixes old path formats)
-- Model type assignment for RoomNavigator integration
+- 5 enemy types with different speeds, health, and behaviors (teleporter, swarmer queen, etc.)
+- 3 weapons: bullets, laser beam, area bomb
+- Animated explosions, health bars, kill counter, HUD
 
-![EnvDesigner demo](EnvDesigner/demo_preview.gif)
+![EarthDefender demo](EarthDefender/demo_preview.gif)
 
 ---
 
