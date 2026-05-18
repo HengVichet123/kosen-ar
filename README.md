@@ -80,3 +80,13 @@ kosen-ar/
 ├── shared/          # Shared headers and ARToolKit stubs
 └── Makefile.common  # Common build rules
 ```
+
+---
+
+## Acknowledgments
+
+- [ARToolKit 2.72](https://www.hitl.washington.edu/artoolkit/) — AR marker detection and camera calibration
+- [OpenCV](https://opencv.org/) — image loading and pixel format handling
+- [OpenGL / GLUT (freeglut)](https://freeglut.sourceforge.net/) — 3D rendering and windowing
+- [GLEW](https://glew.sourceforge.net/) — OpenGL extension loading
+- [GLMetaseq](http://www.be-interactive.org/) — Metasequoia `.mqo` model loader for OpenGL
