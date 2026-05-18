@@ -1,0 +1,4 @@
+Data/mqoFile/chair.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/invisible.mqo

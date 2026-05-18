@@ -1,0 +1,15 @@
+Data/mqoFile/floor.mqo
+Data/mqoFile/wall.mqo
+Data/mqoFile/wall.mqo
+Data/mqoFile/floor.mqo
+Data/mqoFile/bed.mqo
+Data/mqoFile/window.mqo
+Data/mqoFile/Tele.mqo
+Data/mqoFile/desk.mqo
+Data/mqoFile/chair.mqo
+Data/mqoFile/sofa.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/drawer.mqo
+Data/mqoFile/rug.mqo
+Data/mqoFile/bicycle.mqo
+Data/mqoFile/human.mqo

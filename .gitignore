@@ -1,0 +1,11 @@
+# compiled binaries
+EarthDefender/EarthDefender
+RoomNavigator/RoomNavigator
+EnvDesigner/EnvDesigner
+
+# object files
+*/obj/*.o
+
+# editor / OS
+*.swp
+.DS_Store

@@ -1,0 +1,9 @@
+Data/mqoFile/chair.mqo
+Data/mqoFile/table.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/sofa.mqo
+Data/mqoFile/drawer.mqo
+Data/mqoFile/TableClock.mqo
+Data/mqoFile/desk.mqo
+Data/mqoFile/invisible.mqo

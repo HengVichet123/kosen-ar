@@ -1,0 +1,3 @@
+Data/bed.mqo
+Data/desk.mqo
+Data/chair.mqo

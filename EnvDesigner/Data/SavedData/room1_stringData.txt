@@ -1,0 +1,9 @@
+Data/mqoFile/cubes.mqo
+Data/mqoFile/cone.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/chair.mqo
+Data/mqoFile/window.mqo
+Data/mqoFile/tunnel.mqo
+Data/mqoFile/ball.mqo
+Data/mqoFile/invisible.mqo

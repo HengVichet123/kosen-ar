@@ -1,0 +1,4 @@
+Data/mqoFile/desk.mqo
+Data/mqoFile/chair.mqo
+Data/mqoFile/ball.mqo
+Data/mqoFile/bed.mqo

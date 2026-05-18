@@ -1,0 +1,8 @@
+Data/mqoFile/door.mqo
+Data/mqoFile/tree.mqo
+Data/mqoFile/tree.mqo
+Data/mqoFile/window.mqo
+Data/mqoFile/BlackHair.mqo
+Data/mqoFile/bench.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/invisible.mqo

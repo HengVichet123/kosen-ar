@@ -1,0 +1,3 @@
+Data/mqoFile/door.mqo
+Data/mqoFile/door.mqo
+Data/mqoFile/door.mqo

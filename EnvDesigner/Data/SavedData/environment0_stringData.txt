@@ -1,0 +1,10 @@
+Data/mqoFile/character.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/bed.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/character.mqo
+Data/mqoFile/bed.mqo
+Data/mqoFile/door.mqo

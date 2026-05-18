@@ -1,0 +1,89 @@
+# ARToolKit 2.72 source tree — update this one path if you move the toolkit
+AR_SRC = /home/vichet/デスクトップ/Kosen/Before920/KosenResearch/915/lib/SRC
+
+# Shared headers/sources (AR/, GL/, arVideo_stub.c) relative to each project
+SHARED = ../shared
+
+CFLAGS  = -I. -I$(SHARED) -DGL_GLEXT_PROTOTYPES -D_POSIX_C_SOURCE=200112L \
+          $(shell pkg-config --cflags opencv4)
+LIBS    = $(shell pkg-config --libs opencv4) -lglut -lGL -lGLU -lGLEW -lm
+
+O = obj
+
+AR_OBJS = \
+  $(O)/ardetect.o $(O)/ardetect2.o $(O)/arcode.o $(O)/armarker.o \
+  $(O)/artransmat.o $(O)/artransmat2.o $(O)/artransmat3.o $(O)/artransmatcont.o \
+  $(O)/arlabeling.o $(O)/arutil.o \
+  $(O)/malloc.o $(O)/mallocdp.o $(O)/mallocinv.o $(O)/mallocmul.o \
+  $(O)/malloctrans.o $(O)/mallocunit.o \
+  $(O)/mdet.o $(O)/mdisp.o $(O)/mdup.o $(O)/mfree.o $(O)/minv.o \
+  $(O)/mmul.o $(O)/mpca.o $(O)/mselfnv.o $(O)/mtrans.o $(O)/munit.o \
+  $(O)/paramchsz.o $(O)/paramdecomp.o $(O)/paramdisp.o \
+  $(O)/paramdist.o $(O)/paramfile.o $(O)/paramget.o \
+  $(O)/valloc.o $(O)/vdisp.o $(O)/vfree.o $(O)/vhouse.o \
+  $(O)/vinnerp.o $(O)/vtridiag.o \
+  $(O)/gsub.o $(O)/gsubutil.o $(O)/gsub_lite.o \
+  $(O)/GLMetaseq.o $(O)/arVideo_stub.o
+
+$(TARGET): $(O)/$(TARGET).o $(AR_OBJS) | $(O)
+	$(CXX) -O2 -o $@ $^ $(LIBS)
+
+$(O):
+	mkdir -p $(O)
+
+$(O)/$(TARGET).o: $(SRC) | $(O)
+	$(CXX) -O2 -c -o $@ $< $(CFLAGS)
+
+$(O)/GLMetaseq.o: $(SHARED)/GL/GLMetaseq.c | $(O)
+	$(CC) -O2 -c -o $@ $< $(CFLAGS)
+
+$(O)/arVideo_stub.o: $(SHARED)/arVideo_stub.c | $(O)
+	$(CC) -O2 -c -o $@ $< $(CFLAGS)
+
+$(O)/ardetect.o:       $(AR_SRC)/AR/arDetectMarker.c   | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/ardetect2.o:      $(AR_SRC)/AR/arDetectMarker2.c  | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/arcode.o:         $(AR_SRC)/AR/arGetCode.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/armarker.o:       $(AR_SRC)/AR/arGetMarkerInfo.c  | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/artransmat.o:     $(AR_SRC)/AR/arGetTransMat.c    | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/artransmat2.o:    $(AR_SRC)/AR/arGetTransMat2.c   | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/artransmat3.o:    $(AR_SRC)/AR/arGetTransMat3.c   | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/artransmatcont.o: $(AR_SRC)/AR/arGetTransMatCont.c | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/arlabeling.o:     $(AR_SRC)/AR/arLabeling.c       | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/arutil.o:         $(AR_SRC)/AR/arUtil.c           | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/malloc.o:         $(AR_SRC)/AR/mAlloc.c           | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mallocdp.o:       $(AR_SRC)/AR/mAllocDup.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mallocinv.o:      $(AR_SRC)/AR/mAllocInv.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mallocmul.o:      $(AR_SRC)/AR/mAllocMul.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/malloctrans.o:    $(AR_SRC)/AR/mAllocTrans.c      | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mallocunit.o:     $(AR_SRC)/AR/mAllocUnit.c       | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mdet.o:           $(AR_SRC)/AR/mDet.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mdisp.o:          $(AR_SRC)/AR/mDisp.c            | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mdup.o:           $(AR_SRC)/AR/mDup.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mfree.o:          $(AR_SRC)/AR/mFree.c            | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/minv.o:           $(AR_SRC)/AR/mInv.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mmul.o:           $(AR_SRC)/AR/mMul.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mpca.o:           $(AR_SRC)/AR/mPCA.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mselfnv.o:        $(AR_SRC)/AR/mSelfInv.c         | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/mtrans.o:         $(AR_SRC)/AR/mTrans.c           | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/munit.o:          $(AR_SRC)/AR/mUnit.c            | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramchsz.o:      $(AR_SRC)/AR/paramChangeSize.c  | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramdecomp.o:    $(AR_SRC)/AR/paramDecomp.c      | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramdisp.o:      $(AR_SRC)/AR/paramDisp.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramdist.o:      $(AR_SRC)/AR/paramDistortion.c  | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramfile.o:      $(AR_SRC)/AR/paramFile.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/paramget.o:       $(AR_SRC)/AR/paramGet.c         | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/valloc.o:         $(AR_SRC)/AR/vAlloc.c           | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/vdisp.o:          $(AR_SRC)/AR/vDisp.c            | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/vfree.o:          $(AR_SRC)/AR/vFree.c            | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/vhouse.o:         $(AR_SRC)/AR/vHouse.c           | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/vinnerp.o:        $(AR_SRC)/AR/vInnerP.c          | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/vtridiag.o:       $(AR_SRC)/AR/vTridiag.c         | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/gsub.o:           $(AR_SRC)/Gl/gsub.c             | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/gsubutil.o:       $(AR_SRC)/Gl/gsubUtil.c         | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+$(O)/gsub_lite.o:      $(AR_SRC)/Gl/gsub_lite.c        | $(O); $(CC) -O2 -c -o $@ $< $(CFLAGS)
+
+clean:
+	rm -f $(TARGET)
+	rm -rf obj/
+
+.PHONY: clean
