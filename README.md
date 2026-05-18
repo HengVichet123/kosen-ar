@@ -15,7 +15,7 @@ An AR space shooter. 3D enemies spawn from portals on the AR board and move towa
 - 3 weapons: bullets, laser beam, area bomb
 - Animated explosions, health bars, kill counter, HUD
 
-<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/EarthDefender/demo_vid.webm" controls width="720"></video>
+![EarthDefender demo](EarthDefender/demo_preview.gif)
 
 ---
 
@@ -31,7 +31,7 @@ A multi-room AR walker. Move a character through a parking lot → lobby → roo
 - Object interactions: push, pull, jump-on
 - Built-in edit mode to reposition and resize objects, with save/load
 
-<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/RoomNavigator/roomNavi_demo.webm" controls width="720"></video>
+![RoomNavigator demo](RoomNavigator/demo_preview.gif)
 
 ---
 
@@ -47,7 +47,7 @@ A 3D scene layout tool for designing the room environments used by RoomNavigator
 - Save / load layouts (appends on load, auto-fixes old path formats)
 - Model type assignment for RoomNavigator integration
 
-<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/EnvDesigner/envDesign_demo.webm" controls width="720"></video>
+![EnvDesigner demo](EnvDesigner/demo_preview.gif)
 
 ---
 
