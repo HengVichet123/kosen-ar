@@ -1,43 +1,82 @@
 # kosen-ar
 
-AR projects built as kosen (高専) graduation research using ARToolKit 2.72, OpenGL/GLUT, and C++ on Linux.
+AR projects built for kosen (高専) graduation research using **ARToolKit 2.72**, **OpenGL/GLUT**, and **C++** on Linux. A static JPEG image with a Hiro AR marker serves as the scene anchor — no live camera required.
 
-## Projects
+---
 
-| Directory | Description |
-|-----------|-------------|
-| [`EarthDefender/`](EarthDefender/) | AR space shooter — defend Earth from alien enemies |
-| [`RoomNavigator/`](RoomNavigator/) | Multi-room AR walker — explore and navigate between rooms |
-| [`EnvDesigner/`](EnvDesigner/) | Environment designer tool — place and save 3D scene layouts |
+## EarthDefender
 
-All three share a common build system (`Makefile.common`) and a `shared/` library directory containing ARToolKit stubs, GLMetaseq, and controller headers.
+An AR space shooter. 3D enemies spawn from portals on the AR board and move toward Earth. Shoot them down before they reach it.
 
-## Shared Structure
+**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq (.mqo models)
 
-```
-kosen-ar/
-├── Makefile.common       # Shared compiler flags and link rules
-├── shared/               # Headers and compiled objects used by all projects
-│   └── GL/
-│       ├── GLMetaseq.c/h # Metasequoia .mqo loader
-│       └── controller.h  # Key definitions and input struct
-├── EarthDefender/
-├── RoomNavigator/
-└── EnvDesigner/
-```
+**Features**
+- 5 enemy types with different speeds, health, and behaviors (teleporter, swarmer queen, etc.)
+- 3 weapons: bullets, laser beam, area bomb
+- Animated explosions, health bars, kill counter, HUD
 
-## Build Requirements
+<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/EarthDefender/demo_vid.webm" controls width="720"></video>
 
-- Linux with X display
-- OpenCV 4
-- OpenGL / GLUT (`freeglut3-dev`)
-- GLEW (`libglew-dev`)
-- ARToolKit 2.72 source (set `AR_SRC` in `Makefile.common`)
+---
 
-Build any project individually:
+## RoomNavigator
+
+A multi-room AR walker. Move a character through a parking lot → lobby → room 1 / room 2 environment. Approaching a door transitions to the next room.
+
+**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq
+
+**Features**
+- Bidirectional room graph with automatic scene transitions
+- Cylinder-based collision for doors (transition) and furniture (solid obstacle)
+- Object interactions: push, pull, jump-on
+- Built-in edit mode to reposition and resize objects, with save/load
+
+<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/RoomNavigator/roomNavi_demo.webm" controls width="720"></video>
+
+---
+
+## EnvDesigner
+
+A 3D scene layout tool for designing the room environments used by RoomNavigator. Spawn models from a library of 92 `.mqo` files, assign types (door, furniture, init position), tune collision cylinders, and save in RoomNavigator-compatible format.
+
+**Tech:** C++ · OpenGL · ARToolKit · OpenCV · GLMetaseq
+
+**Features**
+- 92 spawnable models (type name with in-app text input or browse with picker)
+- Per-model collision cylinder editor with live display
+- Save / load layouts (appends on load, auto-fixes old path formats)
+- Model type assignment for RoomNavigator integration
+
+<video src="https://raw.githubusercontent.com/HengVichet123/kosen-ar/main/EnvDesigner/envDesign_demo.webm" controls width="720"></video>
+
+---
+
+## Build
 
 ```bash
+# requirements: OpenCV 4, freeglut3-dev, libglew-dev, ARToolKit 2.72
 make -C EarthDefender
 make -C RoomNavigator
 make -C EnvDesigner
+```
+
+Each binary must be run from its own directory with an active X display:
+
+```bash
+DISPLAY=:1 ./EarthDefender/EarthDefender
+DISPLAY=:1 ./RoomNavigator/RoomNavigator
+DISPLAY=:1 ./EnvDesigner/EnvDesigner
+```
+
+---
+
+## Structure
+
+```
+kosen-ar/
+├── EarthDefender/   # AR space shooter
+├── RoomNavigator/   # Multi-room AR navigation
+├── EnvDesigner/     # Scene layout designer
+├── shared/          # Shared headers and ARToolKit stubs
+└── Makefile.common  # Common build rules
 ```
