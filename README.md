@@ -85,8 +85,15 @@ kosen-ar/
 
 ## Acknowledgments
 
-- [ARToolKit 2.72](https://www.hitl.washington.edu/artoolkit/) — AR marker detection and camera calibration
-- [OpenCV](https://opencv.org/) — image loading and pixel format handling
-- [OpenGL / GLUT (freeglut)](https://freeglut.sourceforge.net/) — 3D rendering and windowing
-- [GLEW](https://glew.sourceforge.net/) — OpenGL extension loading
-- [GLMetaseq](http://www.be-interactive.org/) — Metasequoia `.mqo` model loader for OpenGL
+- **ARToolKit 2.72** — AR marker detection and camera calibration
+- **OpenCV** — image loading and pixel format handling
+- **OpenGL / GLUT (freeglut)** — 3D rendering and windowing
+- **GLEW** — OpenGL extension loading
+- **GLMetaseq** — Metasequoia `.mqo` model loader for OpenGL
+
+## References
+
+- [Tips for Metasequoia 4](https://www.metaseq.net/en/tips.html)
+- [Free 3D Models Resources](https://free3d.com/)
+- [Introduction to ARToolKit](http://kougaku-navi.net/ARToolKit/) (2024/01/19)
+- 3D キャラクターが現実世界に誕生! ARToolKit 拡張現実感プログラミング入門 (2008/9/17)
